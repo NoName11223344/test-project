@@ -84,7 +84,8 @@ class HomeController
         $seller = DB::table('sellers')->where('user_id', $request->input('user_id'))
         ->update([
             'seller_name' => $request->input('seller_name'),
-            'address' => $request->input('address')
+            'address' => $request->input('address'),
+            'status' => 0
         ]);
     
         return redirect()->back()->with('messageSucess','Gửi lại yêu cầu xét duyệt thành công');
@@ -135,9 +136,18 @@ class HomeController
         ->update([
             'role' => 2
         ]);
-
-
     }
+
+    public function rejectRegisterSeller(Request $request)
+    {   
+        $seller = DB::table('sellers')
+        ->where('seller_id', $request->input('id'))
+        ->update([
+            'status' => 2
+        ]);
+     
+    }
+
 
     public function listSeller(Request $request)
     {   
@@ -152,6 +162,7 @@ class HomeController
             'users.name as user_name',
             'users.email as user_email',
         ])
+
         ->where('sellers.status', 1)
         ->paginate(15);
 

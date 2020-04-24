@@ -33,6 +33,7 @@ Route::group(['namespace'=>'Site', 'middleware' => 'logined' ], function() {
 
     Route::get('/list-register-seller','HomeController@listRegisterSeller')->name('list_register_seller');
     Route::get('/submit-register-seller','HomeController@submitRegisterSeller')->name('submit_register_seller');
+    Route::get('/reject-register-seller','HomeController@rejectRegisterSeller')->name('reject_register_seller');
     
     Route::get('/list-seller','HomeController@listSeller')->name('list_seller');
 

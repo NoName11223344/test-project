@@ -13,9 +13,14 @@
         @endif
 
         @if( !empty( \App\Entity\Seller::checkSeller($user->id)) )
+           
             <div class="update">
-                <h2 class="text-center text-white pt-5">Đề nghị trở thành Người bán hàng của bạn <i style="color:red"> đang được xét duyệt</i></h2>
-                
+            @if( \App\Entity\Seller::checkSeller($user->id)->status == 0  )
+                <h2 class="text-center text-white pt-5">Đề nghị trở thành Người bán hàng của bạn <i style="color:#2196f3"> đang được xét duyệt</i></h2>
+            @elseif( \App\Entity\Seller::checkSeller($user->id)->status == 2  )
+                <h2 class="text-center text-white pt-5">Đề nghị trở thành Người bán hàng của bạn <i style="color:red"> Đã bị Từ chôi</i></h2>
+            @endif
+
                 <button class="btn btn-primary " onclick="showUpdate();">
                     Đăng ký lại 
                 </button>
@@ -50,9 +55,8 @@
                     $('#update-form').toggle(500);
                 }
             </script>
-
-
             </div>
+            
        @else
         
         <h2 class="text-center text-white pt-5">Đăng ký thành người bán hàng</h2>

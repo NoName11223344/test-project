@@ -66,6 +66,9 @@
                                                   <a id='{{$seller->seller_id}}' user_id="{{$seller->user_id}}" onclick="return submitSeller(this);" title="Phê duyệt " class="btn btn-success">
                                                     <i class="glyphicon glyphicon-ok"></i>
                                                   </a>
+                                                  <a id='{{$seller->seller_id}}' onclick="return rejectSeller(this);" title="Từ chối" class="btn btn-danger">
+                                                    <i class="glyphicon glyphicon-remove-circle"></i>
+                                                  </a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -92,7 +95,7 @@
                             </div>
 
                             <script>
-                              function submitSeller(e){
+                            function submitSeller(e){
                                   id = $(e).attr('id');
                                   user_id = $(e).attr('user_id');
 
@@ -117,7 +120,31 @@
                                         console.log("complete");
                                     });
                                   }
-                              }
+                            }   
+                            function rejectSeller(e){
+                                  id = $(e).attr('id');
+                             
+                                  if(confirm('Bạn có thật sự muốn Từ chối')){
+                                    $.ajax({
+                                        url: '{{route("reject_register_seller")}}',
+                                        type: 'GET',
+                                        data: {
+                                          id: id,                                       
+                                        },
+                                    })
+                                    .done(function() {
+                                        console.log("success");
+                                        alert ('Từ chôi thành công');
+                                        $(e).parent().parent().remove();
+                                    })
+                                    .fail(function() {
+                                        console.log("error");
+                                    })
+                                    .always(function() {
+                                        console.log("complete");
+                                    });
+                                  }
+                            }
 
                             </script>
                         </div>
