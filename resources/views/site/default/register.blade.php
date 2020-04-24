@@ -1,7 +1,7 @@
 @extends('site.layout.site')
 @section('content')
 <div id="login">
-    <h3 class="text-center text-white pt-5">Register form</h3>
+    <h3 class="text-center text-white pt-5">Đăng ký</h3>
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center"  style="width:500px;margin:auto">
             <form action="{{route('submit_register')}}" method="post">
@@ -19,18 +19,18 @@
                     <label for="uname"><b>Email</b></label>
                     <input type="text" placeholder="Enter Username" value="{{ old('email') }}"  name="email" >
 
-                    <label for="uname"><b>Full Name</b></label>
+                    <label for="uname"><b>Họ Tên </b></label>
                     <input type="text" placeholder="Enter Username" value="{{ old('name') }}"  name="name" >
 
-                    <label for="psw"><b>Password</b></label>
+                    <label for="psw"><b>Mật Khẩu</b></label>
                     <input type="password" placeholder="Enter Password" name="password" >
 
-                    <label for="psw"><b>Submit Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="re_password" >
+                    <label for="psw"><b>Xác nhận mật khẩu</b></label>
+                    <input type="password" placeholder="Summit Password" name="re_password" >
 
-                    <button type="submit">Register</button>
+                    <button type="submit">Đăng ký</button>
                 
-                    <a class="btn btn-primary" href="/">Login</a>
+                    <a class="button btn" href="/" style=" background-color: #4c8faf; color:#fff">Đăng nhập</a>
                 </div>
             </form>
 
@@ -57,7 +57,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-button {
+button ,.button{
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;

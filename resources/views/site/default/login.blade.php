@@ -29,7 +29,7 @@
                             <p>{{ session('error') }}</p>
                         </div>
                     @endif
-                    <label for="psw"><b>Password</b></label>
+                    <label for="psw"><b>Mật khẩu</b></label>
                     <input type="password" placeholder="Enter Password" name="password" required>
 
                     @if ($errors->has('password'))
@@ -37,15 +37,14 @@
 												<strong>{{ $errors->first('password') }}</strong>
 											</span>
                     @endif
-                    
-                    <button type="submit">Login</button>
-                   
                     <label>
                       <input type="checkbox" name="remember" value="remember">
                       Nhớ đăng nhập
                     </label>
 
-                    <a class="btn btn-primary" href="{{route('register')}}">Register</a>
+                    <button type="submit">Đăng nhập</button>
+
+                    <a class="button btn" href="{{route('register')}}" style=" background-color: #4c8faf; color:#fff">Đăng ký</a>
                 </div>
             </form>
           
@@ -71,7 +70,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-button {
+button ,.button{
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
