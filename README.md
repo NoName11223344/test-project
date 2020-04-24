@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## Cách cài đặt Laravel
+## Cách cài đặt 
 Chuẩn bị cho môi trường:</br>
 -PHP >= 7.0.0</br>
 -Composer: Công cụ quản lý package PHP, nó sẽ được dùng để cài đặt app Laravel.</br>
