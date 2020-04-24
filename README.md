@@ -7,73 +7,39 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Cách cài đặt 
+Chuẩn bị cho môi trường:</br>
+-PHP >= 7.0.0</br>
+-Composer: Công cụ quản lý package PHP, nó sẽ được dùng để cài đặt app Laravel.</br>
+-XAMPP hoặc MAMP: Công cụ gỉa lập server trên máy tính.</br>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Cài đặt project :</br>
+Khởi động XAMPP or MAMP</br>
+Bước 1: clone dự án về máy</br>
+Bước 2: Đổi tên file .env.example thành .env hoặc có thể giải nén thư mục file_env.rar</br>
+Bước 3: Chạy lệnh composer install trên terminal </br>
+Bước 4: sau khi đã cài đặt thành công các bạn có thể run ứng dụng lên bằng 2 cách.</br>
+    Cách 1: truy cập thằng vào folder public của dự án, Nếu sử dụng XAMPP thì các bạn có thể truy cập theo đường dẫn
+    http://localhost/test-project/public </br>
+    Cách 2: Các bạn dùng terminal truy cập truy cập vào trong folder của dự án và gõ lệnh </br>
+    php artisan serve
+    
+## Giới thiệu project
+Project có các chức năng như sau:</br>
+1: Đăng ký, đăng nhâp : </br>
+Có 3 loại user là : Admin ,người mua và người bán </br>
+Khi người dùng đăng ký mặc định sẽ là quyền người mua </br>
+2: Gửi Đăng ký thành Người Bán
+Sau khi đăng nhập thành công. Người mua có thể đăng ký trở thành người bán và được sự xét duyệt của admin </br>
+Người mua có thể gửi lại thông tin đăng ký của mình khi  admin chưa xét duyệt </br>
+3: Admin Đăng nhập hệ thông :</br>
+Email: buituanviet1234@gmail.com </br>
+Password: matkhau1</br>
+Admin có thể xem được Tất cả tài khoản trên hệ Thông </br>
+Xem được tất cả các đơn Đăng ký thành người bán, Và chấp nhận Cho user trở thành người bán hoặc reject  </br>
+Xem được tất cả danh sách người bán
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
