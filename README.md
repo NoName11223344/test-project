@@ -23,5 +23,23 @@ Bước 4: sau khi đã cài đặt thành công các bạn có thể run ứng 
     http://localhost/test-project/public </br>
     Cách 2: Các bạn dùng terminal truy cập truy cập vào trong folder của dự án và gõ lệnh </br>
     php artisan serve
+    
+## Giới thiệu project
+Project có các chức năng như sau:</br>
+1: Đăng ký, đăng nhâp : </br>
+Có 3 loại user là : Admin ,người mua và người bán </br>
+Khi người dùng đăng ký mặc định sẽ là quyền người mua </br>
+2: Gửi Đăng ký thành Người Bán
+Sau khi đăng nhập thành công. Người mua có thể đăng ký trở thành người bán và được sự xét duyệt của admin </br>
+Người mua có thể gửi lại thông tin đăng ký của mình khi  admin chưa xét duyệt </br>
+3: Admin Đăng nhập hệ thông :</br>
+Email: buituanviet1234@gmail.com </br>
+Password: matkhau1</br>
+Admin có thể xem được Tất cả tài khoản trên hệ Thông </br>
+Xem được tất cả các đơn Đăng ký thành người bán, Và chấp nhận Cho user trở thành người bán hoặc reject  </br>
+Xem được tất cả danh sách người bán
+
+
+
 
 
