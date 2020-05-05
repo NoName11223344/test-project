@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Support\Facades\Log;
 
-class User 
+class User extends Model
 {
     protected $table = 'users';
     protected $primaryKey = 'id';
@@ -27,7 +28,7 @@ class User
     ];
 
     public static function getAll(){
-        $user = DB::table('users')->paginate(15);
+        $user = static::paginate(15);
         return $user;
     }
 

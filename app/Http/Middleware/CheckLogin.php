@@ -19,9 +19,6 @@ class CheckLogin
      */
     public function handle($request, Closure $next)
     {  
-
-        session_start();
-
         $cookie = $request->cookie('user_email');
         if ($cookie == true){
 
@@ -35,12 +32,11 @@ class CheckLogin
 
             }
 
-            $_SESSION['user_login'] = $userEmail;
-
-         
+            $request->session()->put('user_login', $userEmail);
+        
         }
 
-        if( empty($_SESSION['user_login']) ){
+        if( $request->session()->has('user_login') ){
             abort(403);
         }
     

@@ -7,12 +7,14 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 
-class LoginController 
+class LoginController extends Controller
 {
  
     public function login(Request $request){
@@ -31,8 +33,8 @@ class LoginController
         }
 
         // DB::beginTransaction();
-        $user = DB::table('users')->where('email', $request->input('email'))
-        // ->where('password', bcrypt($request->input('password')))
+        $user = User::where('email', $request->input('email'))
+
         ->first();
          
         if(empty($user)){
@@ -42,8 +44,7 @@ class LoginController
         if (Hash::check($request->input('password'), $user->password))
         {
 
-            session_start();
-            $_SESSION['user_login'] = $user->email;
+            $request->session()->put('user_login',  $user->email);
 
             if( $request->has('remember')){
                 $minutes = 365 * 24 * 60  ; 
@@ -52,19 +53,15 @@ class LoginController
 
             return redirect(route('home_page'));
 
-            // $request->session()->put('user_email', $user->email);
-            
-            // $request->session()->save();
-
         }
 
         return redirect()->back()->with('error', 'Tài khoản hoặc mật khẩu không chính xác');
         
     }
 
-    public function logout(){
-
-        unset($_SESSION['user_login']);
+    public function logout(Request $request){
+        
+        $request->session()->pull('user_login', 'default');
         Cookie::queue(Cookie::forget('user_email'));
         return redirect('/');
 

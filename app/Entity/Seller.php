@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 
-class Seller 
+class Seller extends Model
 {
     protected $table = 'sellers';
     protected $primaryKey = 'seller_id';
@@ -26,7 +26,7 @@ class Seller
 
     public static function checkSeller($userId){
 
-        $seller = DB::table('sellers')->where('user_id', $userId)->first();
+        $seller = static::where('user_id', $userId)->first();
         return $seller; 
 
     }

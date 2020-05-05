@@ -6,9 +6,13 @@ use App\Entity\User;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\DB;
+
+use App\Http\Controllers\Controller;
+
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
-class RegisterController 
+class RegisterController extends Controller
 {
  
     /**
@@ -45,7 +49,7 @@ class RegisterController
         }
 
         // DB::beginTransaction();
-            $user = DB::table('users')->insertGetId([
+            $user = User::insertGetId([
                 'email' => $request->input('email'),
                 'name' => $request->input('name'),
                 'password' => bcrypt($request->input('password')),
